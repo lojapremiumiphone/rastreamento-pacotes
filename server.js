@@ -66,5 +66,5 @@ app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
 
-AOS.init();
+// AOS.init();
 
