@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreamento de Pacotes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .highlight {
+        margin-top: 15px;
+    }
+}
+
+header {
+    background: linear-gradient(to right, #1E3A8A, #4F46E5); /* Azul escuro para roxo */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+header h1 {
+    font-size: 2.8rem; /* Aumentar tamanho */
+    font-weight: 800; /* Tornar mais forte */
+    color: #ffffff; /* Branco */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Adicionar sombra */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    text-transform: uppercase; /* Letras maiúsculas */
+}
+
+header p {
+    font-size: 1.2rem; /* Aumentar tamanho */
+    color: #D1D5DB; /* Cinza claro */
+    margin-top: 10px;
+    font-style: italic; /* Tornar em itálico */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+
+
+
+
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        h2 {
+            background: #eef7ff;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: -30px;
+}
+input[type="text"] {
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+input[type="text"]:focus {
+    border-color: #4F46E5;
+    box-shadow: 0 0 6px rgba(79, 70, 229, 0.5);
+}
+.btn-primary {
+    background: #1E3A8A;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    background: #162A6A;
+    transform: scale(1.05);
+}
+
+
+.highlight {
+    background: #FFFFFF;
+    border: 1px solid #1E3A8A;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.highlight:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.highlight i {
+    font-size: 3rem;
+    color: #4F46E5;
+}
+.highlight:hover i {
+    color: #1E3A8A;
+}
+
+        footer {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .qr-code-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .qr-code-container img {
+            max-width: 200px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .highlight {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.highlight:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.highlight i {
+    font-size: 3rem;
+}
+
+h2, h5 {
+    color: #1E3A8A; /* Azul escuro */
+}
+p {
+    font-weight: 400; /* Regular */
+    line-height: 1.6; /* Melhor espaçamento */
+    font-size: 1rem;
+    footer {
+    background: #1E3A8A; /* Azul escuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid #4F46E5; /* Destaque */
+}
+footer a {
+    color: #FFD700; /* Dourado */
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+}
+
+.faq-item {
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+.faq-item:hover {
+    border-color: #1E3A8A;
+    background: #E0F2FE;
+}
+.faq-item h5 {
+    font-size: 1.2rem;
+    color: #1E3A8A;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.faq-item p {
+    color: #6B7280;
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="text-center py-4">
+        <img src="logo.png" alt="Logotipo" class="logo">
+        <h1>Rastreamento de Pacotes</h1>
+        <p class="text-muted">Acompanhe seu pedido com segurança e agilidade.</p>
+    </header>
+
+    <main class="container my-5">
+        <div class="card mx-auto text-center p-4" style="max-width: 600px;">
+            <h2 class="text-primary mb-3">Rastrear Encomenda</h2>
+            <p class="text-muted">Digite o código de rastreio para acompanhar a localização do seu pedido em tempo real.</p>
+            <form id="trackingForm" class="d-flex flex-column align-items-center">
+                <div class="input-group mb-3" style="max-width: 400px;">
+                    <input type="text" id="trackingCode" class="form-control" placeholder="Digite seu código de rastreio" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="fas fa-search"></i> Rastrear
+                </button>
+            </form>
+            <div id="result" class="mt-4 text-center"></div>
+        </div>
+
+        <section class="mt-5 text-center">
+            <h2>Como Funciona?</h2>
+            <p>Digite o código de rastreio enviado para seu e-mail e acompanhe sua encomenda em tempo real.</p>
+        </section>
+
+        <section class="mt-5">
+            <h2 class="text-center">Destaques da Transportadora</h2>
+            <div class="row text-center mt-4">
+                <div class="col-md-4 highlight">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h5>Entrega Rápida</h5>
+                    <p>Receba sua encomenda no menor tempo possível.</p>
+                </div>
+                <div class="col-md-4 highlight">
+                    <i class="fas fa-lock"></i>
+                    <h5>Segurança Garantida</h5>
+                    <p>Protegemos sua mercadoria durante todo o trajeto.</p>
+                </div>
+                <div class="col-md-4 highlight">
+                    <i class="fas fa-headset"></i>
+                    <h5>Suporte 24/7</h5>
+                    <p>Estamos disponíveis para ajudar a qualquer momento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5">
+            <h2 class="text-center">Perguntas Frequentes (FAQ)</h2>
+            <div class="faq-item">
+                <h5><i class="fas fa-question-circle"></i> Onde encontro meu código de rastreio?</h5>
+                <p>O código é enviado para o e-mail utilizado no momento da compra ou fornecido pelo vendedor.</p>
+            </div>
+            <div class="faq-item">
+                <h5>O código de rastreio não está funcionando. O que fazer?</h5>
+                <p>Certifique-se de que inseriu o código corretamente. Caso o problema persista, entre em contato com o suporte.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Transportadora Express. Todos os direitos reservados.</p>
+        <p>
+            <a href="mailto:contacttransportadora@gmail.com">
+                <i class="fas fa-envelope"></i> contacttransportadora@gmail.com
+            </a>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('trackingForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const trackingCode = document.getElementById('trackingCode').value;
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = "Carregando...";
+
+            try {
+                const response = await fetch('/rastrear', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ code: trackingCode })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    let qrCodeSection = "";
+
+                    if (data.status === "Aguardando pagamento de taxas") {
+    qrCodeSection = `
+        <div class="qr-code-container">
+            <img src="${data.qrCode}" alt="QR Code para pagamento">
+            <p>Escaneie o QR Code acima para realizar o pagamento e liberar o pacote.</p>
+            <div class="alert alert-warning mt-2">
+                <strong>Observação:</strong> ${data.observacao}
+            </div>
+        </div>
+    `;
+}
+
+                    resultDiv.innerHTML = `
+                        <div class="card p-4 mt-3 text-start">
+                            <h5 class="text-primary">Detalhes do Pacote:</h5>
+                            <p><strong>Status:</strong> ${data.status}</p>
+                            <p><strong>Endereço de Entrega:</strong> ${data.endereco}</p>
+                            <p><strong>Destinatário:</strong> ${data.destinatario}</p>
+                            <p><strong>Data de Previsão de Entrega:</strong> ${data.dataEntrega}</p>
+                            <p><strong>Transportadora:</strong> ${data.transportadora}</p>
+                            ${qrCodeSection}
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = "Código de rastreio não encontrado.";
+                }
+            } catch (error) {
+                resultDiv.innerHTML = "Erro de conexão. Tente novamente.";
+            }
+        });
+    </script>
+</body>
+</html>
