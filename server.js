@@ -2,28 +2,21 @@ const express = require('express'); // Importa o Express
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const app = express(); // Cria a aplicação Express
-const PORT = process.env.PORT || 3000; // Usa a porta definida pelo Render ou 3000 como fallback
-
 // Configuração do servidor
+const app = express();
+const PORT = process.env.PORT || 10000; // Use a porta definida pelo ambiente ou 10000 como fallback
+
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Exemplo de rota básica
+// Rota de teste (opcional, para verificar o funcionamento)
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.send('Servidor funcionando corretamente!');
 });
 
-// Inicia o servidor e trata erros de forma robusta
+// Inicia o servidor
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
-}).on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-        console.error(`Erro: A porta ${PORT} já está em uso.`);
-    } else {
-        console.error(`Erro ao iniciar o servidor: ${err.message}`);
-    }
-    process.exit(1); // Sai do processo em caso de erro
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
 
 
