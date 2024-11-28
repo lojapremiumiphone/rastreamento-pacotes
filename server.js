@@ -3,7 +3,7 @@ const app = express(); // Cria uma aplicação Express
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const PORT = process.env.PORT || 10000; // Define a porta
+const PORT = process.env.PORT || 3000;
 
 // Configuração do servidor
 app.use(bodyParser.json());
@@ -14,6 +14,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Inicia o servidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
+}).on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.error(`Porta ${PORT} já está em uso. Escolha outra porta.`);
+        process.exit(1);
+    } else {
+        console.error('Erro no servidor:', err);
+    }
 });
 
 
