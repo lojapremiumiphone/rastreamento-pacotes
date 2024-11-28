@@ -4,21 +4,20 @@ const path = require('path');
 
 // Configuração do servidor
 const app = express();
-const PORT = process.env.PORT || 10000; // Use a porta definida pelo ambiente ou 10000 como fallback
+const PORT = process.env.PORT || 10000; // Use a porta definida pelo Render
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Rota de teste (opcional, para verificar o funcionamento)
+// Rota de teste para verificar o funcionamento
 app.get('/', (req, res) => {
-  res.send('Servidor funcionando corretamente!');
+  res.send('Servidor está funcionando corretamente!');
 });
 
 // Inicia o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
-
 
 
 
