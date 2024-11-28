@@ -1,9 +1,21 @@
-// Substitua o código atual que inicia o servidor:
-const PORT = process.env.PORT || 3000;
+const express = require('express'); // Importa o Express
+const app = express(); // Cria uma aplicação Express
+const bodyParser = require('body-parser');
+const path = require('path');
 
+const PORT = process.env.PORT || 3000; // Define a porta
+
+// Configuração do servidor
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Sua lógica de rotas aqui...
+
+// Inicia o servidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
+
 
 
 
