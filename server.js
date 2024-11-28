@@ -1,13 +1,10 @@
 // Substitua o código atual que inicia o servidor:
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 3000;
 
-// Por este código:
-const PORT = process.env.PORT || 3000; // Render define a porta na variável de ambiente PORT
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
+
 
 
 // Banco de dados simulado
