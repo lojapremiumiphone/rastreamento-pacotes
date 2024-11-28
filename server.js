@@ -1,10 +1,12 @@
 const express = require('express'); // Importa o Express
-const app = express(); // Cria a aplicação Express
 const bodyParser = require('body-parser');
 const path = require('path');
 
+// Cria a aplicação Express
+const app = express();
+
 // Porta dinâmica (Render exige isso)
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware para JSON e arquivos estáticos
 app.use(bodyParser.json());
@@ -19,6 +21,7 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
+
 
 
 
