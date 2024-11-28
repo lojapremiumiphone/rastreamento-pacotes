@@ -3,7 +3,10 @@ const app = express(); // Cria uma aplicação Express
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const PORT = process.env.PORT || 8080; // Define a porta
+const PORT = process.env.PORT || 10000; // Define a porta
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
 
 // Configuração do servidor
 app.use(bodyParser.json());
