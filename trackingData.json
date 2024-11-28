@@ -1,0 +1,35 @@
+{
+    "ABC123": {
+        "status": "Em trânsito",
+        "endereco": "Rua das Flores, 123, São Paulo - SP",
+        "destinatario": "Luis Henrique",
+        "Data Postada": "05/12/2024",
+        "transportadora": "Transportadora Express"
+    },
+    "DEF456": {
+        "status": "Em processamento",
+        "endereco": "Rua das Flores, 123, São Paulo - SP",
+        "destinatario": "Luis Henrique",
+        "Data Postada": "10/12/2024",
+        "transportadora": "Transportadora Express"
+    },
+    "GHI789": {
+        "status": "Entrega concluída",
+        "endereco": "Rua das Flores, 123, São Paulo - SP",
+        "destinatario": "Luis Henrique",
+        "Data Postada": "01/12/2024",
+        "transportadora": "Transportadora Express"
+    },
+    "JKL101": {
+        "status": "Aguardando pagamento de taxas",
+        "endereco": "Rua das Flores, 123, São Paulo - SP",
+        "destinatario": "Luis Henrique",
+        "Data Entrega": "Indefinida - aguardando pagamento",
+        "transportadora": "Transportadora Express",
+        "observacao": "O pacote foi taxado pela fiscalização. Efetue o pagamento das taxas para liberá-lo.",
+        "qrCode": "pix.png"
+    }
+
+    
+}
+
