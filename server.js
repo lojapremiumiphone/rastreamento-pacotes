@@ -1,23 +1,25 @@
 const express = require('express'); // Importa o Express
+const app = express(); // Cria a aplicação Express
 const bodyParser = require('body-parser');
 const path = require('path');
 
-// Configuração do servidor
-const app = express();
-const PORT = process.env.PORT || 10000; // Use a porta definida pelo Render
+// Porta dinâmica (Render exige isso)
+const PORT = process.env.PORT || 10000;
 
+// Middleware para JSON e arquivos estáticos
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Rota de teste para verificar o funcionamento
+// Rota básica para teste
 app.get('/', (req, res) => {
-  res.send('Servidor está funcionando corretamente!');
+    res.send('Servidor funcionando corretamente!');
 });
 
 // Inicia o servidor
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
+
 
 
 
