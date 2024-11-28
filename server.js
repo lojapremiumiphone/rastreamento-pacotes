@@ -5,7 +5,7 @@ const path = require('path');
 // Cria a aplicação Express
 const app = express();
 
-// Porta dinâmica (Render exige isso)
+// Render exige uma porta dinâmica
 const PORT = process.env.PORT || 3000;
 
 // Middleware para JSON e arquivos estáticos
@@ -21,7 +21,6 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
-
 
 
 
@@ -84,10 +83,7 @@ app.post('/rastrear', (req, res) => {
     }
 });
 
-// Iniciar o servidor
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+
 
 // AOS.init();
 
